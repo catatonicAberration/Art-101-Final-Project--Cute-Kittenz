@@ -65,7 +65,7 @@ body {
   border: 2px solid #6b4236;
   background: #418acb;
   /* Show the custom cursor while inside the box. */
-  cursor: url("tile_0168.png") 1 0, default;
+  cursor: url("images/tile_0168.png") 1 0, default;
 }
 
 .painting img {

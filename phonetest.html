@@ -1,44 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="flip-phone">
-  
-  <div class="screen-container">
-    <!-- screen content goes here -->
-    <div class="screen">
-      <p>placeholder text</p>
-    </div>
-  </div>
-  
-  <div class="attach"></div>
-  
-  <div class="keypad">
-    
-    <div class="navpad">
-    <button class="phone-icon"><i class="fa-solid fa-phone"></i></button>
-    <div class="nav-buttons">
-      <button class="nav-up"><i class="fa-solid fa-caret-up"></i></button>
-      <button class="nav-left"><i class="fa-solid fa-caret-left"></i></button>
-      <button class="nav-menu">m</button>
-      <button class="nav-right"><i class="fa-solid fa-caret-right"></i></button>
-      <button class="nav-down"><i class="fa-solid fa-caret-down"></i></button>
-    </div>
-   <button class="phone-icon"><i class="fa-solid fa-phone-slash"></i></button>
-</div>
-<div class="keyset">
-  <button class="key">1<br><span><i class="fa-solid fa-voicemail"></i></span></button>
-  <button class="key">2<br><span>ABC</span></button>
-  <button class="key">3<br><span>DEF</span></button>
-  <button class="key">4<br><span>GHI</span></button>
-  <button class="key">5<br><span>JKL</span></button>
-  <button class="key">6<br><span>MNO</span></button>
-  <button class="key">7<br><span>PQRS</span></button>
-  <button class="key">8<br><span>TUV</span></button>
-  <button class="key">9<br><span>WXYZ</span></button>
-  <button class="key">*</button>
-  <button class="key">0</button>
-  <button class="key">#</button>
-</div>
-    
-  </div>
-  
-</div>
+<head>
+  <!-- All techy stuff goes here, inside HEAD -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Overall title of your page -->
+  <title>Phone</title>
+
+  <link rel="stylesheet" href="phonetest.css">
+
+  <!-- Load the prototype script after the page markup is parsed -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="phonetest.js" defer></script>
+
+  <!--Font for the flip phone screen-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist+Pixel&display=swap" rel="stylesheet">
+
+  <!--Flavor text-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="flip-phone">
+    
+    <div class="screen-container">
+      <!-- screen content goes here -->
+      <div class="screen">
+        <p>placeholder text</p>
+      </div>
+    </div>
+    
+    <div class="attach"></div>
+    
+    <div class="keypad">
+      
+      <div class="navpad">
+      <button class="phone-icon"><i class="fa-solid fa-phone"></i></button>
+      <div class="nav-buttons">
+        <button class="nav-up"><i class="fa-solid fa-caret-up"></i></button>
+        <button class="nav-left"><i class="fa-solid fa-caret-left"></i></button>
+        <button class="nav-menu">m</button>
+        <button class="nav-right"><i class="fa-solid fa-caret-right"></i></button>
+        <button class="nav-down"><i class="fa-solid fa-caret-down"></i></button>
+      </div>
+    <button class="phone-icon"><i class="fa-solid fa-phone-slash"></i></button>
+  </div>
+  <div class="keyset">
+    <button class="key" id="key1">1<br><span><i class="fa-solid fa-voicemail"></i></span></button>
+    <button class="key" id="key2">2<br><span>ABC</span></button>
+    <button class="key" id="key3">3<br><span>DEF</span></button>
+    <button class="key" id="key4">4<br><span>GHI</span></button>
+    <button class="key" id="key5">5<br><span>JKL</span></button>
+    <button class="key" id="key6">6<br><span>MNO</span></button>
+    <button class="key" id="key7">7<br><span>PQRS</span></button>
+    <button class="key" id="key8">8<br><span>TUV</span></button>
+    <button class="key" id="key9">9<br><span>WXYZ</span></button>
+    <button class="key" id="key*">*</button>
+    <button class="key" id="key0">0</button>
+    <button class="key" id="key#">#</button>
+  </div>
+      
+    </div>
+    
+  </div>
+</body>
+
+</html>
