@@ -1,5 +1,65 @@
 const painting = document.querySelector(".painting");
 const box = document.querySelector(".middle-box");
+const key = document.querySelector(".key");
+const door = document.querySelector(".door");
+
+let keyDragOffsetX = 0;
+let keyDragOffsetY = 0;
+
+function updateKeyVisibility() {
+  const paintingBounds = painting.getBoundingClientRect();
+  const keyBounds = key.getBoundingClientRect();
+  const covered = paintingBounds.left < keyBounds.right
+    && paintingBounds.right > keyBounds.left
+    && paintingBounds.top < keyBounds.bottom
+    && paintingBounds.bottom > keyBounds.top;
+
+  key.classList.toggle("is-revealed", !covered);
+}
+
+function placeKeyBehindPainting() {
+  const boxBounds = box.getBoundingClientRect();
+  const paintingBounds = painting.getBoundingClientRect();
+  key.style.left = `${paintingBounds.left + (paintingBounds.width - key.offsetWidth) / 2 - boxBounds.left}px`;
+  key.style.top = `${paintingBounds.top + (paintingBounds.height - key.offsetHeight) / 2 - boxBounds.top}px`;
+}
+
+key.addEventListener("pointerdown", (event) => {
+  if (!key.classList.contains("is-revealed")) return;
+
+  event.preventDefault();
+  const bounds = key.getBoundingClientRect();
+  keyDragOffsetX = event.clientX - bounds.left;
+  keyDragOffsetY = event.clientY - bounds.top;
+  key.classList.add("is-dragging");
+  key.setPointerCapture(event.pointerId);
+});
+
+key.addEventListener("pointermove", (event) => {
+  if (!key.classList.contains("is-dragging")) return;
+
+  const boxBounds = box.getBoundingClientRect();
+  key.style.left = `${event.clientX - boxBounds.left - keyDragOffsetX}px`;
+  key.style.top = `${event.clientY - boxBounds.top - keyDragOffsetY}px`;
+});
+
+key.addEventListener("pointerup", (event) => {
+  if (!key.classList.contains("is-dragging")) return;
+
+  key.classList.remove("is-dragging");
+  const doorBounds = door.getBoundingClientRect();
+  const keyBounds = key.getBoundingClientRect();
+  const keyCenterX = keyBounds.left + keyBounds.width / 2;
+  const keyCenterY = keyBounds.top + keyBounds.height / 2;
+
+  if (keyCenterX >= doorBounds.left && keyCenterX <= doorBounds.right
+    && keyCenterY >= doorBounds.top && keyCenterY <= doorBounds.bottom) {
+    key.classList.add("is-used");
+    door.classList.add("is-open");
+  }
+});
+
+key.addEventListener("pointercancel", () => key.classList.remove("is-dragging"));
 
 let clickCount = 0;
 let fallDistance = 0;
@@ -57,4 +117,8 @@ painting.addEventListener("click", () => {
   // Keep the destination as the base style after the combined fall-and-jiggle animation.
   painting.style.transform = `translateY(${fallDistance}px)`;
   fallAnimation = painting.animate(keyframes, { duration, easing: "ease-in-out", fill: "both" });
+  fallAnimation.addEventListener("finish", updateKeyVisibility, { once: true });
 });
+
+placeKeyBehindPainting();
+updateKeyVisibility();

@@ -34,14 +34,22 @@
 
 <body>
   <main class="middle-box" aria-label="Artwork area">
-    <div class="door">
-      <!--door asset here-->
+    <div class="door" aria-label="Locked door">
+      <div class="door-frame">
+        <div class="door-panel"><span class="door-knob"></span></div>
+      </div>
+    </div>
+    <div class="key" role="img" aria-label="Key" tabindex="0">
+      <span class="key-ring"></span><span class="key-shaft"></span><span class="key-tooth"></span>
     </div>
     <div class="padlock">
       <!--padlock asset here-->
     </div>
-    <div class="couch">
-      <!--couch and cat assets here-->
+    <div class="couch" aria-label="Couch">
+      <div class="cat-arm" aria-hidden="true"></div>
+      <div class="couch-back"></div>
+      <div class="couch-seat"></div>
+      <div class="couch-base"></div>
     </div>
     <div class="painting">
       <img src="images/Painting.png" width="50" height="100" alt="Kitten artwork">
