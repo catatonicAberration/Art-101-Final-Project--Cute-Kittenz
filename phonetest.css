@@ -1,27 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-html {
-   background: rgb(230,189,255);
-   background: -moz-linear-gradient(140deg, rgba(230,189,255,1) 0%,
-     rgba(180,97,231,1) 50%, 
-     rgba(255,168,219,1) 50%, 
-     rgba(255,224,242,1) 100%);
-   background: -webkit-linear-gradient(140deg, 
-     rgba(230,189,255,1) 0%, 
-     rgba(180,97,231,1) 50%, 
-     rgba(255,168,219,1) 50%, 
-     rgba(255,224,242,1) 100%);
-   background: linear-gradient(140deg, 
-     rgba(230,189,255,1) 0%, 
-     rgba(180,97,231,1) 50%, 
-     rgba(255,168,219,1) 50.3%, 
-     rgba(255,224,242,1) 100%);
-   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e6bdff",endColorstr="#ffe0f2",GradientType=1);
-   background-repeat:no-repeat;
-   background-size:cover;
-   height:100%;
-}
-
 .flip-phone {
   position: relative;
   display: flex;
@@ -30,67 +8,56 @@ html {
 }
 
 .screen-container {
-  width:170px;
+  width:190px;
   height:230px;
   padding: 5px;
+  top: 15px;
   position: absolute;
-  border: 7px inset #8c92ac;
-  border-radius: 30px;
-  background: #CCCCD9; 
+  background: #c6c7c4; 
 }
 
 .screen {
   width:150px;
   height:180px;
   position: relative;
-  border: 7px inset #8c92ac;
-  border-radius: 5px;
   margin: 0 auto;
 	position: relative;
-  top: 15px;
-	background: rgba(90, 126, 140, 0.3);
+  top: 20px;
+	background: rgb(214, 255, 228);
 	text-align: right;
-	border-radius: 5px;
-	border: 1px solid #2a5d6e;
 	font-size: 12px;
   font-weight: bold;
 	color: #000000;
-	box-shadow: 
-    inset 0 0 8px #2a5d6e,
-    inset 0 1px 1px #000000, 
-    0px 1px #2a5d6e;
 }
 
 .screen p {
   position: absolute;
   padding: 0px 10px;
-  bottom: 0;
-  right: 0;
+  bottom: 65px;
+  right: 30px;
   font-family:"Orbitron", sans-serif;
+  font-size: 15px;
 }
 
 .attach {
-  top: 250px;
-  width: 100px;
-  height: 5px;
+  top: 253px;
+  width: 200px;
+  height: 15px;
   position: absolute;
-  border: 7px outset #70758A;
-  border-radius: 30px;
-  background: #8c92ac; 
+  background: #5c5c5b; 
 
   z-index:-1;
 }
 
 .keypad {
   top: 265px;
-  width:170px;
+  width:190px;
   height: 230px;
   padding: 5px;
   position: absolute;
-  border: 7px outset #8c92ac;
-  border-radius: 30px;
-  background: #CCCCD9; 
+  background: #c6c7c4; 
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(1,minmax(min-content,max-content));
   grid-gap: 1px;
   
@@ -106,26 +73,19 @@ html {
   font-size: 1.15em;
 }
 
-button {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
-}
-
 .phone-icon:nth-of-type(1) {
-  color: green;
+  background-color: green;
   font-size: inherit;
-  border-radius:100px 5px 5px 100px;
   width: 54px;
 }
 
 .phone-icon:nth-of-type(2) {
-  color: red;
+  background-color: red;
   font-size: inherit;
-  border-radius:5px 100px 100px 5px; 
   width:54px;
 }
 
 .nav-buttons {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
   display: grid;
   width: 63px;
   justify-content: center;
@@ -135,19 +95,21 @@ button {
 }
 
 .nav-up {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+  box-shadow: rgba(235, 235, 235, 0.35) 0px -50px 36px -28px inset;
+  height: 20px;
   width: 100%;
   grid-row: 1;
   grid-column: 1 / span 3;}
 
 .nav-left {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+  box-shadow: rgba(235, 235, 235, 0.35) 0px -50px 36px -28px inset;
   grid-row: 2;
+  height: 20px;
   grid-column: 1 / span 1;
 }
 
 .nav-menu {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+  box-shadow: rgba(235, 235, 235, 0.35) 0px -50px 36px -28px inset;
   font-size: 0.5em;
   font-weight:bold;
   font-family:'Orbitron', sans-serif;
@@ -156,13 +118,16 @@ button {
 }
 
 .nav-right {
-  box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+  box-shadow: rgba(235, 235, 235, 0.35) 0px -50px 36px -28px inset;
   grid-row: 2;
   grid-column: 3 / span 1;
+  height: 20px;
 }
 
 .nav-down {
+  box-shadow: rgba(235, 235, 235, 0.35) 0px -50px 36px -28px inset;
   grid-row: 3;
+  height: 20px;
   grid-column: 1 / span 3;
 }
 
@@ -175,6 +140,7 @@ button {
 }
 
 .key {
+  box-shadow: rgba(235, 235, 235, 0.35) 0px -50px 36px -28px inset;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -184,7 +150,6 @@ button {
   font-size: 1em;
   font-weight: bold;
   font-family: 'Orbitron', sans-serif;
-  border-radius: 5px;
 }
 
 .key span {
