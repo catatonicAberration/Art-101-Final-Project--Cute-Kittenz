@@ -13,7 +13,7 @@
   padding: 5px;
   top: 15px;
   position: absolute;
-  background: #c6c7c4; 
+  background: #222324; 
 }
 
 .screen {
@@ -55,7 +55,7 @@
   height: 230px;
   padding: 5px;
   position: absolute;
-  background: #c6c7c4; 
+  background: #222324; 
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(1,minmax(min-content,max-content));
